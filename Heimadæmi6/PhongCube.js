@@ -64,6 +64,7 @@ function triangle(a, b, c) {
     pointsArray.push(a);
     pointsArray.push(b);      
     pointsArray.push(c);
+    
 
     index += 3;
 
@@ -175,22 +176,7 @@ window.onload = function init() {
         }
     });
 
-    document.getElementById("btnIncrease").onclick = function () {
-        if (numTimesToSubdivide < 7) numTimesToSubdivide++;
-        document.getElementById("Subdivisions").innerHTML = numTimesToSubdivide;
-        index = 0;
-        pointsArray = [];
-        normalsArray = [];
-        init();
-    };
-    document.getElementById("btnDecrease").onclick = function () {
-        if (numTimesToSubdivide > 0) numTimesToSubdivide--;
-        document.getElementById("Subdivisions").innerHTML = numTimesToSubdivide;
-        index = 0;
-        pointsArray = [];
-        normalsArray = [];
-        init();
-    };
+  
 
 
     // Event listener for mousewheel
