@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    font-family: 'VT323', monospace;
+}
+
+.sliders {
+    margin-top:10%;
+    width:1015px;
+}
+.sound{
+    margin-top:10%;
+    margin-bottom: 10%;
+}

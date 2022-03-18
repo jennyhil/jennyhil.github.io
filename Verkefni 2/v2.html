@@ -1,0 +1,76 @@
+<html>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="verkefni2/styles.css">
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute  vec4 vPosition;
+
+uniform mat4 projection;
+uniform mat4 modelview;
+
+void main() 
+{
+    gl_Position = projection * modelview * vPosition;
+} 
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+   
+uniform vec4 wireColor;
+
+void
+main()
+{
+    gl_FragColor = wireColor;
+}
+</script>
+
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="verkefni2/v2.js"></script>
+<script type="text/javascript" src="verkefni2/animals.js"></script>
+
+<body>
+
+    <canvas id="gl-canvas" width="500" height="500"></canvas>
+
+    <div class="sliders" id="sliders">
+        <div class="sound">Ýttu á bil takkann (spacebar) fyrir hljóð</div>
+        <div>
+            Fjöldi kinda: </br> 1<input id="noSheeps" type="range" min="1" max="30" step="1" value="1"> 30
+            <div id="noOfSheep">
+
+            </div>
+        </div>
+        <div>
+            Fjöldi úlfa: </br> 1<input id="noWolves" type="range" min="1" max="10" step="1" value="1"> 10
+        </div>
+        <div id="noOfWolves">
+
+        </div>
+        <div>
+            Fjöldi uppfærslna þar til kindur fæða: </br> 1 <input id="sheepBirth" type="range" min="1" max="10" step="1"
+                value="3"> 10
+
+        </div>
+        <div>
+            Fjöldi uppfærslna þar til úlfar svelta: </br> 10 <input id="starvationTime" type="range" min="10" max="240"
+                step="10" value="50"> 240
+        </div>
+        <div>
+            Fjöldi étinna kinda þar til yrðlingar fæðast: </br> 1 <input id="wolfBirth" type="range" min="1" max="10"
+                step="1" value="2"> 10
+        </div>
+        <div>
+            Hraði hermunar: </br> Stopp <input id="simulationSpeed" type="range" min="0" max="5" step="1" value="1"> Á
+            fleygiferð
+        </div>
+    </div>
+
+</body>
+
+</html>
